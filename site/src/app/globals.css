@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Pan-Lio Design Tokens
+   ==========================================================================
+   Verified anchors sampled directly from the live pan-lio.com production DOM
+   (getComputedStyle on body/h1/sections, 2 Sep 2026 audit). Extensions are
+   marked explicitly and stay inside the same warm, sand/sage family — see
+   /docs/MASTER_PROMPT.md §3.1.
+
+   60:30:10 rule (apply per screen, documented per component):
+     60% — sand-50/sand-100 surfaces (dominant)
+     30% — espresso-900/ink-950 structure & type (secondary)
+     10% — ONE accent per screen: sage-600 OR clay-500 (never both)
+   ========================================================================== */
+
+:root {
+  /* Neutrals — the 60% */
+  --sand-50: #f6f3ec; /* verified — cream, text-on-dark */
+  --sand-100: #ece4da; /* verified — base page surface */
+  --sand-200: #ddd3c6; /* extension — secondary surface / hover */
+  --sand-300: #cac3bb; /* verified — borders, dividers */
+
+  /* Structure — the 30% */
+  --espresso-700: #4a413a; /* extension — muted body text */
+  --espresso-900: #36302a; /* verified — primary body text */
+  --ink-950: #221e1a; /* extension — darkest bands, footer */
+
+  /* Accents — the 10% (one per screen) */
+  --sage-600: #58766c; /* verified — primary accent */
+  --sage-700: #466057; /* extension — hover/active state */
+  --sage-100: #e3e9e6; /* extension — tinted accent surface */
+  --clay-500: #b07d56; /* extension — secondary accent (hero wood tones) */
+  --clay-600: #96683f; /* extension — hover/active state */
+  --clay-100: #f0e3d5; /* extension — tinted accent surface */
+
+  /* Semantic aliases consumed by Tailwind's @theme below */
+  --background: var(--sand-100);
+  --foreground: var(--espresso-900);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-sand-50: var(--sand-50);
+  --color-sand-100: var(--sand-100);
+  --color-sand-200: var(--sand-200);
+  --color-sand-300: var(--sand-300);
+
+  --color-espresso-700: var(--espresso-700);
+  --color-espresso-900: var(--espresso-900);
+  --color-ink-950: var(--ink-950);
+
+  --color-sage-100: var(--sage-100);
+  --color-sage-600: var(--sage-600);
+  --color-sage-700: var(--sage-700);
+
+  --color-clay-100: var(--clay-100);
+  --color-clay-500: var(--clay-500);
+  --color-clay-600: var(--clay-600);
+
+  --font-display: var(--font-young-serif);
+  --font-body: var(--font-bitter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), ui-serif, Georgia, serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+}
+
+/* Respect reduced-motion globally; anime.js scopes additionally check this
+   in JS before running (see src/lib/motion.ts), this is the CSS-only backstop. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible focus ring on every interactive element — WCAG 2.4.7 */
+:focus-visible {
+  outline: 2px solid var(--sage-600);
+  outline-offset: 2px;
+}
