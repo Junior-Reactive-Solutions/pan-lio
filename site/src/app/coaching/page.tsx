@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Compass, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Container } from "@/components/ui/Container";
@@ -8,6 +8,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { CoachingCard } from "@/components/course/CoachingCard";
+import { LogoMark } from "@/components/icons/LogoMark";
+import { FounderMonogram } from "@/components/ui/FounderMonogram";
 import { siteNav } from "@/lib/nav";
 import { coachingPackages } from "@/content/coaching";
 
@@ -30,9 +32,9 @@ export default function CoachingPage() {
       <section className="py-16 sm:py-24">
         <Container className="max-w-2xl text-center">
           <Reveal>
-            <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-clay-100 text-clay-600">
-              <Compass className="h-6 w-6" aria-hidden="true" />
-            </span>
+            <div className="mx-auto h-16 w-16 text-clay-600">
+              <LogoMark variant="coach-dk" className="h-full w-full" themed />
+            </div>
             <p className="mt-5 font-body text-xs font-bold uppercase tracking-[0.18em] text-clay-600">
               Coach DK Global
             </p>
@@ -93,7 +95,10 @@ export default function CoachingPage() {
               accent="clay"
               description="Deo Kateizi founded Coach DK Global to help people move from vision to impact — through mindset transformation, spiritual growth, leadership development, business mentorship and motivational speaking."
             />
-            <div className="mt-6">
+            <div className="mt-8 flex justify-center">
+              <FounderMonogram size="md" />
+            </div>
+            <div className="mt-8">
               <Button href="/about#founder" accent="clay" variant="ghost" icon={<ArrowRight className="h-4 w-4" />}>
                 Read the full story
               </Button>

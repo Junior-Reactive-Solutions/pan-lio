@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { LogoMark } from "@/components/icons/LogoMark";
 
 export interface NavLink {
   label: string;
@@ -41,8 +42,8 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-40 border-b border-sand-300/70 bg-sand-100/90 backdrop-blur">
       <Container className="flex h-16 items-center justify-between sm:h-20">
-        <Link href="/" className="font-display text-xl text-espresso-900 sm:text-2xl">
-          Pan-Lio
+        <Link href="/" className="flex items-center h-10 text-espresso-900 hover:opacity-80 transition-opacity">
+          <LogoMark variant="pan-lio" className="h-10 w-10" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

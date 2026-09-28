@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { BrandIcon, type BrandName } from "@/components/icons/BrandIcon";
+import { LogoMark } from "@/components/icons/LogoMark";
 
 const socials: { name: BrandName; href: string; handle: string }[] = [
   { name: "instagram", href: "https://www.instagram.com/coachdkateizi", handle: "@coachdkateizi" },
@@ -18,7 +19,10 @@ export function SiteFooter() {
     <footer className="bg-ink-950 text-sand-100">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16">
         <div className="lg:col-span-1">
-          <p className="font-display text-2xl text-sand-50">Pan-Lio</p>
+          <div className="h-10 w-10 text-sand-50">
+            <LogoMark variant="pan-lio" className="h-full w-full" themed />
+          </div>
+          <p className="mt-3 font-display text-sm text-sand-50">Pan-Lio Ltd</p>
           <p className="mt-3 font-body text-sm leading-relaxed text-sand-300">
             Real estate, transport, trade, international life insurance and
             strategic leadership — built by Pan-Lio Ltd, home of Coach DK

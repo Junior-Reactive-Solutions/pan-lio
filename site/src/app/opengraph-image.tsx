@@ -32,15 +32,25 @@ export default async function OpengraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 30,
+              fontSize: 28,
               color: "#a9c2ba",
-              letterSpacing: 4,
-              textTransform: "uppercase",
               fontWeight: 700,
               display: "flex",
+              alignItems: "center",
+              gap: 16,
             }}
           >
-            PAN-LIO &amp; COACH DK GLOBAL
+            {/* Pan-Lio mark */}
+            <svg viewBox="0 0 200 200" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#a9c2ba">
+                <path d="M 60 40 Q 50 20 70 10 Q 90 5 110 8 Q 125 12 135 28 Q 140 40 135 55" />
+                <circle cx="90" cy="85" r="35" />
+                <path d="M 70 110 Q 55 115 50 130 Q 48 140 55 145 Q 70 152 85 148" />
+                <ellipse cx="105" cy="100" rx="28" ry="20" />
+                <path d="M 125 55 Q 140 50 145 65 Q 140 75 130 72" />
+              </g>
+            </svg>
+            <div>PAN-LIO &amp; COACH DK GLOBAL</div>
           </div>
           <div
             style={{
