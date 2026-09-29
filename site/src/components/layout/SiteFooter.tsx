@@ -98,13 +98,19 @@ export function SiteFooter() {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-6 font-body text-xs text-sand-300 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
-            <p>© {new Date().getFullYear()} Pan-Lio Ltd. All rights reserved.</p>
-            <p className="text-sand-300/70">Demo build — not the live pan-lio.com site.</p>
-          </div>
-          <div className="flex items-center gap-5">
+          <p>© {new Date().getFullYear()} Pan-Lio Ltd. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-5">
             <Link href="/privacy" className="hover:text-sand-50">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-sand-50">Terms of Use</Link>
+            <span className="text-sand-300/50">|</span>
+            <a
+              href="https://jrcom.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sand-300/60 transition-colors hover:text-sand-200"
+            >
+              Built by Junior Reactive Solutions
+            </a>
           </div>
         </Container>
       </div>
