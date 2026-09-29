@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { LogoMark } from "@/components/icons/LogoMark";
 
 export interface NavLink {
   label: string;
@@ -42,8 +42,15 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-40 border-b border-sand-300/70 bg-sand-100/90 backdrop-blur">
       <Container className="flex h-16 items-center justify-between sm:h-20">
-        <Link href="/" className="flex items-center h-10 text-espresso-900 hover:opacity-80 transition-opacity">
-          <LogoMark variant="pan-lio" className="h-10 w-10" />
+        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <Image
+            src="/images/pan-lio-wordmark.webp"
+            alt="Pan-Lio"
+            width={200}
+            height={200}
+            className="h-14 w-14 sm:h-16 sm:w-16 object-contain"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
