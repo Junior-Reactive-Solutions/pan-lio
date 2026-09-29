@@ -6,6 +6,7 @@ import type { NavLink } from "@/components/layout/SiteHeader";
  * now resolve to real pages.
  */
 export const siteNav: NavLink[] = [
+  { label: "Home", href: "/" },
   { label: "Courses", href: "/courses" },
   { label: "Coaching", href: "/coaching" },
   { label: "Services", href: "/services" },
