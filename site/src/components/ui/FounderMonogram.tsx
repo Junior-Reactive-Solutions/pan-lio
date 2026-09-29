@@ -16,7 +16,7 @@ export function FounderMonogram({ size = "md" }: { size?: "md" | "lg" }) {
           height={320}
           sizes={`(max-width: 640px) ${imageSize}px, ${imageSize}px`}
           priority
-          className="h-full w-full object-cover object-[center_20%]"
+          className="h-full w-full object-cover object-top"
         />
       </div>
     </div>

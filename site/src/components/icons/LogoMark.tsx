@@ -14,18 +14,14 @@ export function LogoMark({ variant, className, themed: _themed }: LogoProps) {
   const alt = variant === "pan-lio" ? "Pan-Lio" : "Coach DK Global";
 
   return (
-    <span
+    <Image
+      src={src}
+      alt={alt}
+      width={variant === "coach-dk" ? 400 : 200}
+      height={200}
       className={className}
-      style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        width={200}
-        height={200}
-        style={{ width: "100%", height: "100%", objectFit: "contain" }}
-        priority
-      />
-    </span>
+      style={{ objectFit: "contain" }}
+      priority
+    />
   );
 }

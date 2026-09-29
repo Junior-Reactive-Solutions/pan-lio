@@ -32,12 +32,9 @@ export default function CoachingPage() {
       <section className="py-16 sm:py-24">
         <Container className="max-w-2xl text-center">
           <Reveal>
-            <div className="mx-auto h-16 w-16 text-clay-600">
-              <LogoMark variant="coach-dk" className="h-full w-full" themed />
+            <div className="mx-auto w-56 sm:w-64">
+              <LogoMark variant="coach-dk" className="h-auto w-full" />
             </div>
-            <p className="mt-5 font-body text-xs font-bold uppercase tracking-[0.18em] text-clay-600">
-              Coach DK Global
-            </p>
             <h1 className="font-display mt-4 text-4xl leading-[1.05] text-espresso-900 sm:text-5xl">
               One-on-one coaching, built around where you want to go.
             </h1>
