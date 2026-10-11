@@ -23,6 +23,7 @@ const siteUrl = "https://www.pan-lio.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "./" },
   title: {
     default: "Pan-Lio | Training, Leadership Coaching & Investment — East Africa",
     template: "%s | Pan-Lio",
