@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { SignupSection } from "@/components/marketing/SignupSection";
 import { CourseGroupCard } from "@/components/course/CourseGroupCard";
 import { CoachingCard } from "@/components/course/CoachingCard";
 import { getSiteStats } from "@/lib/stats";
@@ -250,6 +251,8 @@ export function Home() {
           </Reveal>
         </Container>
       </section>
+
+      <SignupSection />
 
       {/* ============ CTA / CONTACT ============ */}
       <section id="contact" className="bg-sand-100 py-16 sm:py-24">
