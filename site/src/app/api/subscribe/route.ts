@@ -28,12 +28,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
   }
 
+  // Each interest list drives its own follow-up emails in Brevo; "both" follows the courses track.
+  const interestList = Number(
+    interest === "coaching" ? process.env.BREVO_LIST_COACHING : process.env.BREVO_LIST_COURSES,
+  );
+  const listIds = interestList ? [listId, interestList] : [listId];
+
   const res = await fetch("https://api.brevo.com/v3/contacts", {
     method: "POST",
     headers: { "api-key": apiKey, "content-type": "application/json", accept: "application/json" },
     body: JSON.stringify({
       email,
-      listIds: [listId],
+      listIds,
       attributes: { INTEREST: interest },
       updateEnabled: true,
     }),

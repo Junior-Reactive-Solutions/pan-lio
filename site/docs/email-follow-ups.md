@@ -18,10 +18,24 @@ Project pan-lio > Settings > Environment Variables (Production), then redeploy:
 | Name | Value |
 | --- | --- |
 | `BREVO_API_KEY` | the key from step 6 |
-| `BREVO_LIST_ID` | the list ID from step 2 |
+| `BREVO_LIST_ID` | `3` (Pan-Lio newsletter) |
+| `BREVO_LIST_COURSES` | `6` (Interest - Courses) |
+| `BREVO_LIST_COACHING` | `7` (Interest - Coaching) |
 
-## 3. Welcome series (Brevo > Automations > Create a workflow)
-Trigger: "Contact added to list" Pan-Lio newsletter. Add the steps below. Use a condition on `INTEREST` for the Day 3 and Day 7 emails.
+## 3. Welcome series (already built in Brevo, currently inactive)
+Every sign-up joins list 3, plus list 6 (courses or both) or list 7 (coaching). One automation per email:
+
+| Automation | Trigger list | Wait | Email template |
+| --- | --- | --- | --- |
+| #1 | 3 Pan-Lio newsletter | 1 minute | #1 Your Leadership Starter Guide is here |
+| #3 | 6 Interest - Courses | 3 days | #2 Three courses starting soon |
+| #4 | 7 Interest - Coaching | 3 days | #3 What a first coaching session feels like |
+| #5 | 6 Interest - Courses | 7 days | #4 Which course fits you? |
+| #6 | 7 Interest - Coaching | 7 days | #5 ZuluOne or ZuluTwo? How to choose |
+
+Automation #2 is an empty draft and can be deleted. Turn each automation on with "Activate automation" once sending is unblocked, the domain is authenticated and the guide PDF is live. The email HTML lives in `docs/emails/` (regenerate with `node site/docs/emails/build.mjs`).
+
+Email copy, for reference:
 
 **Day 0, right away. Subject: Your Leadership Starter Guide is here**
 > Hi there,
