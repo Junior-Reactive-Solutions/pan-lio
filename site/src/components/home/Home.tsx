@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, Briefcase, Compass, Quote } from "lucide-react";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -47,15 +48,35 @@ export function Home() {
       <section className="py-16 sm:py-24">
         <Container>
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="font-body text-xs font-bold uppercase tracking-[0.18em] text-espresso-700/70">
-              Pan-Lio &amp; Coach DK Global
-            </p>
-            <h1 className="font-display mt-4 text-4xl leading-[1.05] text-espresso-900 sm:text-5xl">
-              Two ways to grow with Pan-Lio.
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+              <Image
+                src="/images/pan-lio-wordmark-tight.webp"
+                alt="Pan-Lio"
+                width={1162}
+                height={985}
+                sizes="(min-width: 640px) 124px, 92px"
+                className="h-20 w-auto sm:h-[104px]"
+                priority
+              />
+              <span aria-hidden="true" className="font-display text-2xl text-espresso-700/60">
+                &amp;
+              </span>
+              <Image
+                src="/images/coach-dk-logo-tight.webp"
+                alt="Coach DK Global"
+                width={1425}
+                height={592}
+                sizes="(min-width: 640px) 150px, 120px"
+                className="h-12 w-auto sm:h-[62px]"
+                priority
+              />
+            </div>
+            <h1 className="font-display mt-8 text-4xl leading-[1.05] text-espresso-900 sm:text-5xl">
+              Two ways to grow with us.
             </h1>
             <p className="mt-5 font-body text-lg leading-relaxed text-espresso-700">
-              One company, two clear paths — corporate training for
-              organisations, and one-on-one coaching for individuals. Pick
+              Corporate training for organisations from Pan-Lio, and
+              one-on-one coaching for individuals from Coach DK Global. Pick
               the door that matches where you are.
             </p>
           </Reveal>

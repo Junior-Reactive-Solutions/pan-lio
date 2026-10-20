@@ -41,14 +41,31 @@ export function SiteHeader({
 
   return (
     <header className="sticky top-0 z-40 border-b border-sand-300/70 bg-sand-100/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between sm:h-20">
-        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+      {/* Phones: a 3-column grid keeps the logos truly centred between an empty cell and the menu button. */}
+      <Container className="grid h-16 grid-cols-[2.5rem_1fr_2.5rem] items-center sm:h-20 lg:flex lg:justify-between">
+        <span aria-hidden="true" className="lg:hidden" />
+        <Link
+          href="/"
+          aria-label="Pan-Lio and Coach DK Global, home"
+          className="flex items-center gap-3 justify-self-center transition-opacity hover:opacity-80 sm:gap-4"
+        >
           <Image
-            src="/images/pan-lio-wordmark.webp"
+            src="/images/pan-lio-wordmark-tight.webp"
             alt="Pan-Lio"
-            width={200}
-            height={200}
-            className="h-14 w-14 sm:h-16 sm:w-16 object-contain"
+            width={1162}
+            height={985}
+            sizes="80px"
+            className="h-11 w-auto sm:h-14"
+            priority
+          />
+          <span aria-hidden="true" className="h-8 w-px bg-sand-300 sm:h-10" />
+          <Image
+            src="/images/coach-dk-logo-tight.webp"
+            alt="Coach DK Global"
+            width={1425}
+            height={592}
+            sizes="100px"
+            className="h-7 w-auto sm:h-9"
             priority
           />
         </Link>
@@ -86,7 +103,7 @@ export function SiteHeader({
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-espresso-900 lg:hidden"
+          className="flex h-10 w-10 items-center justify-center justify-self-end rounded-full text-espresso-900 lg:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
