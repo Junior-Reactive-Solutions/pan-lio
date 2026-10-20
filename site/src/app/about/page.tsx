@@ -112,8 +112,8 @@ export default function AboutPage() {
                 Under the philosophy &ldquo;Zero to one is greater than one
                 to a hundred,&rdquo; Coach DK Global inspires breakthrough
                 thinking, resilience, and sustainable personal and
-                professional growth — one-on-one, through the ZuluOne and
-                ZuluTwo coaching tracks, and at scale, through the{" "}
+                professional growth — one-on-one through ZuluOne and ZuluTwo,
+                in small groups through AmaZulu, and at scale, through the{" "}
                 {stats.totalDeliveries}-course Pan-Lio training calendar
                 delivered across {stats.countries} countries in 2026.
               </p>

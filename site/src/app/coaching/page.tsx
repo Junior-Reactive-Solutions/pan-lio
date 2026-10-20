@@ -14,13 +14,13 @@ import { siteNav } from "@/lib/nav";
 import { coachingPackages } from "@/content/coaching";
 
 export const metadata: Metadata = {
-  title: "Life Coaching — ZuluOne & ZuluTwo",
+  title: "Life Coaching — ZuluOne, ZuluTwo & AmaZulu",
   description:
-    "One-on-one life coaching with Coach DK Global. ZuluOne ($500/month) and ZuluTwo ($750/month) — mindset, leadership, wealth and purpose, delivered online or in person.",
+    "Life coaching with Coach DK Global. One-on-one with ZuluOne ($500/month) and ZuluTwo ($750/month), or in a small group with AmaZulu ($2,520/month) — mindset, leadership, wealth and purpose, delivered online or in person.",
 };
 
 const waMessage = encodeURIComponent(
-  "Hi Coach DK, I'd like to know more about the ZuluOne / ZuluTwo coaching packages."
+  "Hi Coach DK, I'd like to know more about the ZuluOne / ZuluTwo / AmaZulu coaching packages."
 );
 
 export default function CoachingPage() {
@@ -36,13 +36,13 @@ export default function CoachingPage() {
               <LogoMark variant="coach-dk" className="h-auto w-full" />
             </div>
             <h1 className="font-display mt-4 text-4xl leading-[1.05] text-espresso-900 sm:text-5xl">
-              One-on-one coaching, built around where you want to go.
+              Coaching built around where you want to go.
             </h1>
             <p className="mt-6 font-body text-lg leading-relaxed text-espresso-700">
               At Coach DK Global, in collaboration with Pan-Lio Ltd, coaching
-              is delivered online or in person — two tracks, ZuluOne and
-              ZuluTwo, both built on the same philosophy: clarity first, then
-              transformation.
+              is delivered online or in person — one-on-one with ZuluOne and
+              ZuluTwo, or in a small group with AmaZulu. All three are built
+              on the same philosophy: clarity first, then transformation.
             </p>
           </Reveal>
         </Container>
@@ -69,11 +69,11 @@ export default function CoachingPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Choose Your Track"
-              title="ZuluOne & ZuluTwo"
+              title="ZuluOne, ZuluTwo & AmaZulu"
               accent="clay"
             />
           </Reveal>
-          <Reveal stagger delay={100} className="mt-10 grid gap-6 sm:grid-cols-2">
+          <Reveal stagger delay={100} className="mt-10 grid gap-6 lg:grid-cols-3">
             {coachingPackages.map((pkg, i) => (
               <CoachingCard key={pkg.slug} pkg={pkg} featured={i === 1} />
             ))}

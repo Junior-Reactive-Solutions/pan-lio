@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Users } from "lucide-react";
 import type { CoachingPackage } from "@/content/coaching";
 
 export function CoachingCard({
@@ -28,6 +28,13 @@ export function CoachingCard({
         <span className="font-display text-3xl text-espresso-900">{pkg.price}</span>
         <span className="font-body text-sm text-espresso-700">for {pkg.duration}</span>
       </div>
+
+      {pkg.groupSize && (
+        <p className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-sage-100 px-3 py-1 font-body text-xs font-bold text-sage-700">
+          <Users className="h-3.5 w-3.5" aria-hidden="true" />
+          {pkg.groupSize}
+        </p>
+      )}
 
       <p className="mt-4 font-body text-sm leading-relaxed text-espresso-700">
         <strong className="text-espresso-900">Focus:</strong> {pkg.focus}

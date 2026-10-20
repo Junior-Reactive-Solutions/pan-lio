@@ -115,9 +115,9 @@ export function Home() {
                 </span>
                 <h2 className="font-display mt-6 text-3xl">For Individuals</h2>
                 <p className="mt-3 max-w-sm font-body text-sm leading-relaxed text-espresso-700">
-                  One-on-one life coaching with Coach DK Global — mindset,
-                  leadership, wealth and purpose. Two tracks, ZuluOne and
-                  ZuluTwo, built around where you want to go.
+                  Life coaching with Coach DK Global — mindset, leadership,
+                  wealth and purpose. One-on-one with ZuluOne and ZuluTwo,
+                  or in a small group with AmaZulu.
                 </p>
               </div>
               <span className="mt-8 inline-flex items-center gap-2 font-body text-sm font-semibold text-clay-600">
@@ -177,14 +177,14 @@ export function Home() {
             <SectionHeading
               eyebrow="For Individuals"
               title="Coach DK Global — life coaching packages"
-              description="Delivered online or in person. Two tracks, both built around the same philosophy: clarity first, then transformation."
+              description="Delivered online or in person. Three packages, all built around the same philosophy: clarity first, then transformation."
               accent="clay"
             />
             <Button href="/coaching" accent="clay" icon={<ArrowRight className="h-4 w-4" />}>
               Full coaching details
             </Button>
           </Reveal>
-          <Reveal stagger delay={100} className="mt-10 grid gap-6 sm:grid-cols-2">
+          <Reveal stagger delay={100} className="mt-10 grid gap-6 lg:grid-cols-3">
             {coachingPackages.map((pkg, i) => (
               <CoachingCard key={pkg.slug} pkg={pkg} featured={i === 1} />
             ))}
