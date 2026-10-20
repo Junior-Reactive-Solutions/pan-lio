@@ -31,7 +31,7 @@ Every sign-up joins list 3, plus list 6 (courses or both) or list 7 (coaching). 
 | #3 | 6 Interest - Courses | 3 days | #2 Three courses starting soon |
 | #4 | 7 Interest - Coaching | 3 days | #3 What a first coaching session feels like |
 | #5 | 6 Interest - Courses | 7 days | #4 Which course fits you? |
-| #6 | 7 Interest - Coaching | 7 days | #5 ZuluOne or ZuluTwo? How to choose |
+| #6 | 7 Interest - Coaching | 7 days | #5 ZuluOne, ZuluTwo or AmaZulu? How to choose |
 
 Automation #2 is an empty draft and can be deleted. Turn each automation on with "Activate automation" once sending is unblocked, the domain is authenticated and the guide PDF is live. The email HTML lives in `docs/emails/` (regenerate with `node site/docs/emails/build.mjs`).
 
@@ -55,8 +55,8 @@ Email copy, for reference:
 > Not sure which course suits you? Reply to this email with your role and what you want to improve. A real person will suggest the best fit.
 > [Book a course] https://www.pan-lio.com/courses
 
-**Day 7 (coaching). Subject: ZuluOne or ZuluTwo? How to choose**
-> ZuluOne is for clarity and a fresh start. ZuluTwo goes deeper into leadership, money and purpose. Not sure which is right? Send us a message and we'll talk it through, no pressure.
+**Day 7 (coaching). Subject: ZuluOne, ZuluTwo or AmaZulu? How to choose**
+> ZuluOne is for clarity and a fresh start. ZuluTwo goes deeper into leadership, money and purpose. AmaZulu is a small group of up to six, built for accountability and faster growth alongside others. Not sure which is right? Send us a message and we'll talk it through, no pressure.
 > [Chat on WhatsApp] https://wa.me/256780424010
 
 Every email must include Brevo's unsubscribe link (added automatically by the template).

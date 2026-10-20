@@ -51,10 +51,11 @@ const emails = [
   },
   {
     file: "3b-coaching.html",
-    subject: "ZuluOne or ZuluTwo? How to choose",
-    preview: "Clarity and a fresh start, or deeper leadership and purpose.",
+    subject: "ZuluOne, ZuluTwo or AmaZulu? How to choose",
+    preview: "One-on-one or in a small group: find your fit.",
     paras: [
       "ZuluOne is for clarity and a fresh start. ZuluTwo goes deeper into leadership, money and purpose.",
+      "AmaZulu is a small group of up to six, built for accountability and faster growth alongside others.",
       "Not sure which is right? Send us a message and we'll talk it through, no pressure.",
     ],
     button: ["Chat on WhatsApp", "https://wa.me/256780424010"],
