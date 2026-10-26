@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppButtons } from "@/components/ui/WhatsAppButtons";
 import { Reveal } from "@/components/ui/Reveal";
 import { CourseGroupCard } from "@/components/course/CourseGroupCard";
 import { getCourseGroupBySlug, getCourseGroups, getRelatedCourseGroups } from "@/content/courses";
@@ -113,9 +114,7 @@ export default async function CourseDetailPage({
               below.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
-              <Button href={`https://wa.me/256780424010?text=${waMessage}`} accent="sage" icon={<ArrowRight className="h-4 w-4" />}>
-                Book this course on WhatsApp
-              </Button>
+              <WhatsAppButtons accent="sage" encodedText={waMessage} />
               <Button href="/courses" accent="dark" variant="outline" icon={<ArrowLeft className="h-4 w-4" />}>
                 Back to all courses
               </Button>

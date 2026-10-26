@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppButtons } from "@/components/ui/WhatsAppButtons";
 import { Reveal } from "@/components/ui/Reveal";
 import { SignupSection } from "@/components/marketing/SignupSection";
 import { CourseGroupCard } from "@/components/course/CourseGroupCard";
@@ -76,7 +77,7 @@ export function Home() {
             </h1>
             <p className="mt-5 font-body text-lg leading-relaxed text-espresso-700">
               Corporate training for organisations from Pan-Lio, and
-              one-on-one coaching for individuals from Coach DK Global. Pick
+              coaching for individuals and groups from Coach DK Global. Pick
               the door that matches where you are.
             </p>
           </Reveal>
@@ -113,7 +114,7 @@ export function Home() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-clay-100 text-clay-600">
                   <Compass className="h-6 w-6" aria-hidden="true" />
                 </span>
-                <h2 className="font-display mt-6 text-3xl">For Individuals</h2>
+                <h2 className="font-display mt-6 text-3xl">For Individuals and Groups</h2>
                 <p className="mt-3 max-w-sm font-body text-sm leading-relaxed text-espresso-700">
                   Life coaching with Coach DK Global — mindset, leadership,
                   wealth and purpose. One-on-one with ZuluOne and ZuluTwo,
@@ -175,7 +176,7 @@ export function Home() {
         <Container>
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
-              eyebrow="For Individuals"
+              eyebrow="For Individuals and Groups"
               title="Coach DK Global — life coaching packages"
               description="Delivered online or in person. Three packages, all built around the same philosophy: clarity first, then transformation."
               accent="clay"
@@ -267,7 +268,7 @@ export function Home() {
               &ldquo;Zero to one is greater than one to a hundred.&rdquo;
             </p>
             <p className="mt-4 font-body text-sm text-sand-300">
-              Deo Kateizi — Founder, Coach DK Global
+              Deo Kateizi — Co-Founder, Pan-Lio &amp; Coach DK Global
             </p>
           </Reveal>
         </Container>
@@ -290,9 +291,7 @@ export function Home() {
             <Button href="/contact" accent="sage" icon={<ArrowRight className="h-4 w-4" />}>
               Get in touch
             </Button>
-            <Button href="https://wa.me/256780424010" accent="dark" variant="outline">
-              Chat on WhatsApp
-            </Button>
+            <WhatsAppButtons accent="dark" variant="outline" />
           </Reveal>
         </Container>
       </section>

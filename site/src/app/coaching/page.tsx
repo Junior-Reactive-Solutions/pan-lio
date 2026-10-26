@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppButtons } from "@/components/ui/WhatsAppButtons";
 import { Reveal } from "@/components/ui/Reveal";
 import { CoachingCard } from "@/components/course/CoachingCard";
 import { LogoMark } from "@/components/icons/LogoMark";
@@ -57,7 +58,7 @@ export default function CoachingPage() {
               &ldquo;Zero to one is greater than one to a hundred.&rdquo;
             </p>
             <p className="mt-4 font-body text-sm text-sand-300">
-              Deo Kateizi — Founder, Coach DK Global
+              Deo Kateizi — Co-Founder, Pan-Lio &amp; Coach DK Global
             </p>
           </Reveal>
         </Container>
@@ -90,14 +91,14 @@ export default function CoachingPage() {
               title="About Deo Kateizi"
               align="center"
               accent="clay"
-              description="Deo Kateizi founded Coach DK Global to help people move from vision to impact — through mindset transformation, spiritual growth, leadership development, business mentorship and motivational speaking."
+              description="Deo Kateizi, co-founder of Pan-Lio and Coach DK Global, helps people move from vision to impact — through mindset transformation, spiritual growth, leadership development, business mentorship and motivational speaking."
             />
             <div className="mt-8 flex justify-center">
               <FounderMonogram size="md" />
             </div>
             <div className="mt-8">
-              <Button href="/about#founder" accent="clay" variant="ghost" icon={<ArrowRight className="h-4 w-4" />}>
-                Read the full story
+              <Button href="/about#founders" accent="clay" variant="ghost" icon={<ArrowRight className="h-4 w-4" />}>
+                Meet the founders
               </Button>
             </div>
           </Reveal>
@@ -117,9 +118,7 @@ export default function CoachingPage() {
             />
           </Reveal>
           <Reveal delay={100} className="flex flex-wrap justify-center gap-4">
-            <Button href={`https://wa.me/256780424010?text=${waMessage}`} accent="clay" icon={<ArrowRight className="h-4 w-4" />}>
-              Chat on WhatsApp
-            </Button>
+            <WhatsAppButtons accent="clay" encodedText={waMessage} />
             <Button href="/contact" accent="light" variant="outline">
               Other ways to reach us
             </Button>

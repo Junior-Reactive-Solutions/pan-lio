@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { getSiteStats } from "@/lib/stats";
 import { siteNav } from "@/lib/nav";
+import { primaryWhatsappDigits, whatsappNumbers, whatsappUrl } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -21,7 +22,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-sand-100">
-      <SiteHeader links={siteNav} accent="sage" ctaLabel="WhatsApp Us" ctaHref="https://wa.me/256780424010" />
+      <SiteHeader links={siteNav} accent="sage" ctaLabel="WhatsApp Us" ctaHref={whatsappUrl(primaryWhatsappDigits)} />
 
       <section className="py-16 sm:py-20">
         <Container>
@@ -48,22 +49,27 @@ export default function ContactPage() {
               <div className="rounded-3xl border border-sand-300 bg-sand-50 p-6 sm:p-8">
                 <h2 className="font-display text-lg text-espresso-900">Reach us directly</h2>
 
-                <a
-                  href="https://wa.me/256780424010"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 flex items-center gap-3 rounded-2xl bg-sage-100 p-4 transition-colors hover:bg-sage-100/70"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sage-600 text-sand-50">
-                    <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <span>
-                    <span className="block font-body text-sm font-semibold text-espresso-900">
-                      WhatsApp — fastest response
-                    </span>
-                    <span className="block font-body text-xs text-espresso-700">+256 780 424010</span>
-                  </span>
-                </a>
+                <div className="mt-5 space-y-3">
+                  {whatsappNumbers.map((n, i) => (
+                    <a
+                      key={n.digits}
+                      href={whatsappUrl(n.digits)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 rounded-2xl bg-sage-100 p-4 transition-colors hover:bg-sage-100/70"
+                    >
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sage-600 text-sand-50">
+                        <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                      <span>
+                        <span className="block font-body text-sm font-semibold text-espresso-900">
+                          {i === 0 ? "WhatsApp — fastest response" : "WhatsApp — second line"}
+                        </span>
+                        <span className="block font-body text-xs text-espresso-700">{n.display}</span>
+                      </span>
+                    </a>
+                  ))}
+                </div>
 
                 <div className="mt-6">
                   <h3 className="font-body text-xs font-bold uppercase tracking-[0.14em] text-espresso-700/70">

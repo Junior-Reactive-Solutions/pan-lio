@@ -8,6 +8,7 @@ import { StatTile } from "@/components/ui/StatTile";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { FounderMonogram } from "@/components/ui/FounderMonogram";
+import { FoundersSection } from "@/components/about/FoundersSection";
 import { getSiteStats } from "@/lib/stats";
 import { siteNav } from "@/lib/nav";
 import { businessLines } from "@/content/business";
@@ -15,7 +16,7 @@ import { businessLines } from "@/content/business";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Pan-Lio Ltd is a multi-industry enterprise across real estate, transport, trade and international life insurance — home of Coach DK Global, the leadership coaching and training practice founded by Deo Kateizi.",
+    "Pan-Lio Ltd is a multi-industry enterprise across real estate, transport, trade and international life insurance — home of Coach DK Global, the leadership coaching and training practice co-founded by Deo and Patricia Kateizi.",
 };
 
 export default function AboutPage() {
@@ -48,8 +49,8 @@ export default function AboutPage() {
               sustainable growth and long-term wealth.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
-              <Button href="#founder" accent="sage" icon={<ArrowRight className="h-4 w-4" />}>
-                Meet Deo Kateizi
+              <Button href="#founders" accent="sage" icon={<ArrowRight className="h-4 w-4" />}>
+                Meet the founders
               </Button>
               <Button href="/courses" accent="dark" variant="outline">
                 Browse courses
@@ -96,36 +97,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ============ MEET DEO KATEIZI ============ */}
-      <section id="founder" className="bg-sage-100 py-16 sm:py-24">
-        <Container className="max-w-3xl">
-          <Reveal>
-            <SectionHeading eyebrow="About the Founder" title="Meet Deo Kateizi" accent="sage" />
-            <div className="mt-6 space-y-4 font-body text-base leading-relaxed text-espresso-700">
-              <p>
-                Deo Kateizi founded Coach DK Global to help people move from
-                vision to impact — through mindset transformation, spiritual
-                growth, leadership development, business mentorship and
-                motivational speaking.
-              </p>
-              <p>
-                Under the philosophy &ldquo;Zero to one is greater than one
-                to a hundred,&rdquo; Coach DK Global inspires breakthrough
-                thinking, resilience, and sustainable personal and
-                professional growth — one-on-one through ZuluOne and ZuluTwo,
-                in small groups through AmaZulu, and at scale, through the{" "}
-                {stats.totalDeliveries}-course Pan-Lio training calendar
-                delivered across {stats.countries} countries in 2026.
-              </p>
-            </div>
-            <div className="mt-8">
-              <Button href="/coaching" accent="sage" icon={<ArrowRight className="h-4 w-4" />}>
-                Explore coaching with Deo
-              </Button>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
+      <FoundersSection />
 
       {/* ============ BUSINESS LINES ============ */}
       <section className="bg-sand-50 py-16 sm:py-24">

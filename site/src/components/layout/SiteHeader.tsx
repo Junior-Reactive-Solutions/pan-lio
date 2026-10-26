@@ -41,58 +41,66 @@ export function SiteHeader({
 
   return (
     <header className="sticky top-0 z-40 border-b border-sand-300/70 bg-sand-100/90 backdrop-blur">
-      {/* Phones: a 3-column grid keeps the logos truly centred between an empty cell and the menu button. */}
-      <Container className="grid h-16 grid-cols-[2.5rem_1fr_2.5rem] items-center sm:h-20 lg:flex lg:justify-between">
+      {/* Phones: a 3-column grid keeps the logos truly centred between an empty cell and the menu button.
+          Laptops: Pan-Lio sits on the left, Coach DK on the right, and the menu links + button are centred between them. */}
+      <Container className="grid h-16 grid-cols-[2.5rem_1fr_2.5rem] items-center sm:h-20 lg:flex lg:justify-between lg:gap-8">
         <span aria-hidden="true" className="lg:hidden" />
-        <Link
-          href="/"
-          aria-label="Pan-Lio and Coach DK Global, home"
-          className="flex items-center gap-3 justify-self-center transition-opacity hover:opacity-80 sm:gap-4"
-        >
-          <Image
-            src="/images/pan-lio-wordmark-tight.webp"
-            alt="Pan-Lio"
-            width={1162}
-            height={985}
-            sizes="80px"
-            className="h-11 w-auto sm:h-14"
-            priority
-          />
-          <span aria-hidden="true" className="h-8 w-px bg-sand-300 sm:h-10" />
-          <Image
-            src="/images/coach-dk-logo-tight.webp"
-            alt="Coach DK Global"
-            width={1425}
-            height={592}
-            sizes="100px"
-            className="h-7 w-auto sm:h-9"
-            priority
-          />
-        </Link>
+        <div className="flex items-center justify-center gap-3 sm:gap-4 lg:contents">
+          <Link
+            href="/"
+            aria-label="Pan-Lio, home"
+            className="transition-opacity hover:opacity-80 lg:order-1"
+          >
+            <Image
+              src="/images/pan-lio-wordmark-tight.webp"
+              alt="Pan-Lio"
+              width={1162}
+              height={985}
+              sizes="80px"
+              className="h-11 w-auto sm:h-14"
+              priority
+            />
+          </Link>
+          <span aria-hidden="true" className="h-8 w-px bg-sand-300 sm:h-10 lg:hidden" />
+          <Link
+            href="/"
+            aria-label="Coach DK Global, home"
+            className="transition-opacity hover:opacity-80 lg:order-3"
+          >
+            <Image
+              src="/images/coach-dk-logo-tight.webp"
+              alt="Coach DK Global"
+              width={1425}
+              height={592}
+              sizes="120px"
+              className="h-7 w-auto sm:h-9 lg:h-11"
+              priority
+            />
+          </Link>
+        </div>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {links.map((link) =>
-            isAnchor(link.href) ? (
-              <a
-                key={link.href}
-                href={link.href}
-                className="font-body text-sm font-medium text-espresso-700 transition-colors hover:text-espresso-900"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-body text-sm font-medium text-espresso-700 transition-colors hover:text-espresso-900"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
-        </nav>
-
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-8 lg:order-2 lg:flex lg:flex-1 lg:justify-center xl:gap-10">
+          <nav className="flex items-center gap-8 xl:gap-10">
+            {links.map((link) =>
+              isAnchor(link.href) ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-body text-sm font-medium text-espresso-700 transition-colors hover:text-espresso-900"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-body text-sm font-medium text-espresso-700 transition-colors hover:text-espresso-900"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+          </nav>
           <Button href={ctaHref} accent={accent} className="!px-5 !py-2.5 !text-xs">
             {ctaLabel}
           </Button>
